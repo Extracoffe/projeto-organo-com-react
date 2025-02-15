@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
