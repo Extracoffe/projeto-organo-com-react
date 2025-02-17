@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
+import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = (props) => {
@@ -6,9 +8,20 @@ const Time = (props) => {
   const primaria = { borderColor: props.corPrimaria };
 
   return (
-    <section className="time" style={css}>
-      <h3 style={primaria}>{props.nome}</h3>
-    </section>
+    props.colaboradores.length > 0 && (
+      <section className="time" style={css}>
+        <h3 style={primaria}>{props.nome}</h3>
+        <div className="colaboradores">
+          {props.colaboradores.map((colaborador) => (
+            <Colaborador
+              nome={colaborador.nome}
+              cargo={colaborador.cargo}
+              imagem={colaborador.imagem}
+            />
+          ))}
+        </div>
+      </section>
+    )
   );
 };
 
